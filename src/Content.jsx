@@ -2,6 +2,7 @@ import { useState } from "react";
 import FlowerGrid from "./components/FlowerGrid";
 import { useFlowers } from "./hooks/useFlowers";
 import styles from "./Content.module.css";
+import spinnerIcon from "/loading_indicator.svg";
 
 function Content() {
     const { images, selected, toggleFlower, clearSelection, hasSelection } = useFlowers();
@@ -32,18 +33,18 @@ function Content() {
                 toggleFlower={toggleFlower}
             />
 
-            {orderStatus === "loading" && (
-                <div className={styles.orderStatus}>
-                    <span>Uw bestelling wordt geplaatst...</span>
-                    <div className={styles.spinner}></div>
-                </div>
-            )}
+            <div className={`${styles.orderStatus} ${orderStatus !== "idle" ? styles.visible : "" }`}>
+                {orderStatus === "loading" && (
+                    <>
+                        <span>Uw bestelling wordt geplaatst...</span>
+                        <img src={spinnerIcon} className={styles.spinnerIcon} />
+                    </>
+                )}
 
-            {orderStatus === "success" && (
-                <div className={styles.orderStatus}>
-                    Uw bestelling is geplaatst!
-                </div>
-            )}
+                {orderStatus === "success" && (
+                    <span>Uw bestelling is geplaatst!</span>
+                )}
+            </div>
 
             <button
                 className={styles.appBtn}
@@ -57,28 +58,3 @@ function Content() {
 }
 
 export default Content;
-
-
-// import FlowerGrid from "./components/FlowerGrid";
-// import { useFlowers } from "./hooks/useFlowers";
-// import styles from "./Content.module.css";
-
-// function Content() {
-//   const { images, selected, toggleFlower, hasSelection } = useFlowers();
-
-//   return (
-//     <main className={styles.pageContent}>
-//       <FlowerGrid
-//         images={images}
-//         selected={selected}
-//         toggleFlower={toggleFlower}
-//       />
-
-//       <button className={styles.appBtn} disabled={!hasSelection}>
-//         Bestellen
-//       </button>
-//     </main>
-//   );
-// }
-
-// export default Content;
