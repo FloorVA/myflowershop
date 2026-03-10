@@ -1,0 +1,65 @@
+/* --- Basic reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   Variables
+========================= */
+:root {
+    /* Properties */
+    --content-width: 100%;
+    --max-content-width: 1100px;
+
+    /* Padding / margin */
+    --space-sm: 8px;
+    /* small */
+    --space-md: 16px;
+    /* medium */
+    --space-lg: 40px;
+    /* large */
+    --space-xl: 64px;
+    /* extra large */
+    --content-padding: 24px;
+    /* Padding of all content blocks */
+
+    /* Styling */
+    --primary-color: #E11586;
+    --secondary-color: #2E3742;
+    --text-color: #2E3742;
+    --button-height: 45px;
+
+    /* Background */
+    --header-background: #E11586;
+    --content-background: white;
+    --item-background: #F8F8F8;
+    --footer-background: #FFF5FB;
+}
+
+/* =========================
+   Basic elements
+========================= */
+html, body {
+    font-family: "Instrument Sans", system-ui, sans-serif;
+    height: 100%;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}

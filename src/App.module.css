@@ -1,0 +1,56 @@
+
+/* =========================
+   App body
+========================= */
+.appBody {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: black;
+}
+
+/* =========================
+   Navbar
+========================= */
+.siteHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 0;
+  color: white;
+  padding: 10px 0px 0px 0px;
+}
+
+.logo {
+  width: 200px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* =========================
+   Footer
+========================= */
+.siteFooter {
+    background-color: var(--footer-background);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.siteFooter p {
+    font-family: "Inria Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px;
+    color: #797979;
+}
